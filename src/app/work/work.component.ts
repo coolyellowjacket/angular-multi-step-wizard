@@ -12,7 +12,7 @@ export class WorkComponent implements OnInit {
     title = 'What do you do?';
     workType: string;
     form: any;
-    
+
     constructor(private router: Router, private formDataService: FormDataService) {
     }
 
@@ -25,16 +25,14 @@ export class WorkComponent implements OnInit {
         if (!form.valid) {
             return false;
         }
-        
+
         this.formDataService.setWork(this.workType);
         return true;
     }
 
     goToPrevious(form: any) {
-        if (this.save(form)) {
-            // Navigate to the personal page
-            this.router.navigate(['/personal']);
-        }
+        // Navigate to the personal page
+        this.router.navigate(['/personal']);
     }
 
     goToNext(form: any) {
